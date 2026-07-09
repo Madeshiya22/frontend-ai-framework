@@ -30,8 +30,8 @@ Produce a formalized **UI Handoff Report** that evaluates the frontend implement
 
 - Implementation source code / rendered UI preview.
 - Approved Technical Specification.
-- Design Specification Document (or Figma files).
-- Design System guidelines (`../overview/DESIGN_SYSTEM.md`).
+- Approved Design Specification (`DESIGN_SPEC.md`).
+- Design Guidelines (`../overview/DESIGN_GUIDELINES.md`).
 
 ---
 
@@ -103,5 +103,6 @@ You must strictly execute the following review phases.
 
 - NEVER write or modify code for the developer.
 - NEVER evaluate functional correctness (QA's job).
-- NEVER invent design decisions not present in the approved design.
+- NEVER invent design decisions or provide subjective design opinions.
+- ALWAYS evaluate objectively: compare the implementation strictly against the `DESIGN_SPEC.md` (PASS/FAIL).
 - NEVER use numeric scores (e.g., "90/100").

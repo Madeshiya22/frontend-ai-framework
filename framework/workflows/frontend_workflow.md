@@ -77,23 +77,29 @@ The Solution Architect designs the complete implementation plan — component hi
 ### Stage 5: [Handoff to Orchestrator: Phase 2 Approval Gate]
 Present the Technical Specification to the user. Yield control to `../ORCHESTRATOR.md` to enforce the global LLM Hard Stop.
 
-### Stage 6: Implementation
-The Frontend Developer executes `../skills/implement_section.md`, writing all components, styles, and logic exactly as defined in the approved Tech Spec. If a design reference was provided, the Figma Implementer executes `../skills/figma_to_code.md` first to produce the Design Specification for the Frontend Developer.
+### Stage 6: Design Specification
+The UI/UX Designer executes `../skills/create_design_spec.md` to define the comprehensive visual language, typography, color palette, spacing system, component styles, and responsiveness guidelines. This creates the DESIGN_SPEC.md which acts as the ultimate visual source of truth.
 
-### Stage 7: Parallel Review
+### Stage 7: [Handoff to Orchestrator: Phase 3 Approval Gate]
+Present the Design Specification to the user. Yield control to `../ORCHESTRATOR.md` to enforce the global LLM Hard Stop.
+
+### Stage 8: Implementation
+The Frontend Developer executes `../skills/implement_section.md`, writing all components, styles, and logic exactly as defined in the approved Tech Spec AND the approved Design Spec. The developer MUST NOT invent UI.
+
+### Stage 9: Parallel Review
 Four agents run simultaneously:
 - QA Engineer: `../skills/responsive.md`
 - QA Engineer: `../skills/accessibility.md`
 - PR Auditor: `../skills/code_review.md`
-- UI Reviewer: `../skills/design_review.md` (only if design reference was provided)
+- UI Reviewer: `../skills/design_review.md` (Validates objective compliance with the Design Spec)
 
-### Stage 8: Review Score Aggregation
+### Stage 10: Review Score Aggregation
 All review reports are collected and scored. The aggregated score determines the next action.
 
-### Stage 9: Deployment Readiness
+### Stage 11: Deployment Readiness
 If all reviews pass, the Solution Architect executes `../skills/deployment.md` to perform final build and environment validation.
 
-### Stage 10: [Handoff to Orchestrator: Phase 6 Final Release Approval Gate]
+### Stage 12: [Handoff to Orchestrator: Phase 7 Final Release Approval Gate]
 Present the Unified Delivery Report to the user. Yield control to `../ORCHESTRATOR.md` to enforce the global LLM Hard Stop before authorizing release.
 
 ---
@@ -105,12 +111,12 @@ Present the Unified Delivery Report to the user. Yield control to `../ORCHESTRAT
 | Requirement Analysis | Product Manager |
 | Application Analysis | Solution Architect |
 | Technical Specification | Solution Architect |
-| Design Extraction | Figma Implementer (if design provided) |
+| Design Specification | UI/UX Designer |
 | Implementation | Frontend Developer |
 | Responsive Validation | QA Engineer |
 | Accessibility Validation | QA Engineer |
 | Code Review | PR Auditor |
-| UI Review | UI Reviewer (if design provided) |
+| UI Review | UI Reviewer |
 | Deployment Readiness | Solution Architect |
 
 ---
@@ -122,7 +128,7 @@ Present the Unified Delivery Report to the user. Yield control to `../ORCHESTRAT
 | Requirement Analysis | `../skills/create_prd.md` |
 | Application Analysis | `../skills/website_analysis.md`, `../skills/project_research.md` |
 | Technical Specification | `../skills/create_tech_spec.md` |
-| Design Extraction | `../skills/figma_to_code.md` |
+| Design Specification | `../skills/create_design_spec.md` |
 | Implementation | `../skills/implement_section.md` |
 | Responsive Validation | `../skills/responsive.md` |
 | Accessibility Validation | `../skills/accessibility.md` |
@@ -140,7 +146,8 @@ Present the Unified Delivery Report to the user. Yield control to `../ORCHESTRAT
 |------|-----------|--------|
 | PRD Approval | After Stage 2 | [Orchestrator Handoff] |
 | Tech Spec Approval | After Stage 5 | [Orchestrator Handoff] |
-| Final Release Sign-off | After Stage 9 | [Orchestrator Handoff] |
+| Design Spec Approval | After Stage 7 | [Orchestrator Handoff] |
+| Final Release Sign-off | After Stage 11 | [Orchestrator Handoff] |
 
 ---
 

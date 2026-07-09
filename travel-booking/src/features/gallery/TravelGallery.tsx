@@ -60,6 +60,7 @@ export function TravelGallery() {
                 src={image.src}
                 alt={image.alt}
                 loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -72,6 +73,8 @@ export function TravelGallery() {
     </section>
   );
 }
+
+
 
 
 

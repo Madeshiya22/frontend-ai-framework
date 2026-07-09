@@ -56,6 +56,7 @@ export function FeaturedPackages() {
                   src={pkg.imageUrl} 
                   alt={pkg.title}
                   loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
@@ -100,6 +101,8 @@ export function FeaturedPackages() {
     </section>
   );
 }
+
+
 
 
 

@@ -71,6 +71,7 @@ You must strictly execute the following sequence. Do not skip any phases.
   - Target Project Directory
 - Verify that the Target Project Directory is exactly `<Framework Root>/<Project Name>`. If the Target Project Directory is outside the Framework Root, **STOP**. Do not execute any scaffold commands. Report the reason to the user.
 - Verify the Technical Specification is explicitly APPROVED by the user.
+- Verify the Design Specification is explicitly APPROVED by the user.
 - Verify the Design System and design tokens are loaded in context.
 - Verify the Architecture document (`../overview/ARCHITECTURE.md`) has been reviewed.
 - Verify all required existing components and dependencies identified in the Tech Spec exist in the project.
@@ -92,8 +93,9 @@ You must strictly execute the following sequence. Do not skip any phases.
 - **File Impact Analysis:** Before modifying any existing file, trace its imports and dependents. Identify all affected modules to ensure no side effects are introduced.
 
 ### Phase 4: Implementation Execution
-- Follow the approved Technical Specification exactly. Do not invent new requirements.
-- **Design Tokens:** Use Design Tokens for all styling (colors, spacing, typography). Never hardcode magic numbers.
+- Follow PRD + TECH_SPEC + DESIGN_SPEC exactly. Never invent UI.
+- Do not invent new requirements.
+- **Design Tokens:** Use Design Tokens for all styling (colors, spacing, typography). Never hardcode magic numbers. All tokens must originate from the Design Specification.
 - **Component Rules:** Maintain responsive-first (mobile-up) and accessibility-first (semantic HTML, ARIA) implementation standards on every single file.
 - **Modularity:** Keep components small, modular, and focused on a single responsibility.
 - **Strict Scope:** Do not modify unrelated files. Do not refactor code outside the explicit scope of the Tech Spec.

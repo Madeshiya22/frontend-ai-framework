@@ -77,27 +77,34 @@ Before beginning, analyze the user request and select the appropriate pipeline:
 - **Output Validation**: Ensure component hierarchy, routing, and file changes are mapped to the chosen Tech Stack.
 - **🛑 APPROVAL GATE**: Display Tech Spec summary. **CRITICAL HARD STOP:** Stop response generation immediately. Do not generate content for Phase 3. Do not assume user approval. Wait for an explicit user response (e.g., "Approve" or "Proceed").
 
-### PHASE 3: Implementation
+### PHASE 3: Design Specification
+- **Target Agent**: UI/UX Designer (`agents/ui-ux-designer/AGENT.md`)
+- **Target Skill**: `skills/create_design_spec.md`
+- **Action**: Spawn Sub-Agent. Feed approved Tech Spec and PRD.
+- **Output Validation**: Ensure the Design Specification explicitly defines the visual language, typography, color palettes, and component standards.
+- **🛑 APPROVAL GATE**: Display Design Spec summary. **CRITICAL HARD STOP:** Stop response generation immediately. Do not generate content for Phase 4. Do not assume user approval. Wait for an explicit user response.
+
+### PHASE 4: Implementation
 - **Target Agent**: Frontend Developer (`agents/frontend-developer/AGENT.md`)
 - **Target Skill**: `skills/implement_section.md`
-- **Action**: Spawn Sub-Agent. Feed approved Tech Spec and Architecture context.
+- **Action**: Spawn Sub-Agent. Feed approved Design Spec, Tech Spec, and Architecture context.
 - **Execution**: Sub-agent writes code corresponding to the selected stack (React, Vue, Next.js, HTML/CSS).
 - **Output Validation**: Code generated without destructive overwrites. 
-- **Auto-Proceed**: Move immediately to Phase 4 for validation. No user approval needed here.
+- **Auto-Proceed**: Move immediately to Phase 5 for validation. No user approval needed here.
 
-### PHASE 4: Parallel Validation (QA & Accessibility)
+### PHASE 5: Parallel Validation (QA & Accessibility)
 - **Action**: Spawn 2 Parallel Sub-Agents.
-- **Sub-Agent 4A (QA Engineer)**: Uses `skills/responsive.md`. Tests breakpoints and functionality.
-- **Sub-Agent 4B (QA Engineer)**: Uses `skills/accessibility.md`. Tests semantic markup, ARIA, and contrast.
+- **Sub-Agent 5A (QA Engineer)**: Uses `skills/responsive.md`. Tests breakpoints and functionality.
+- **Sub-Agent 5B (QA Engineer)**: Uses `skills/accessibility.md`. Tests semantic markup, ARIA, and contrast.
 - **Wait State**: Orchestrator waits for both sub-agents to return results.
 
-### PHASE 5: Code Audit & Design Review
+### PHASE 6: Code Audit & Design Review
 - **Action**: Spawn 2 Parallel Sub-Agents.
-- **Sub-Agent 5A (PR Auditor)**: Uses `agents/pr-auditor/AGENT.md` & `skills/code_review.md`. Validates framework standards and modularity.
-- **Sub-Agent 5B (UI Reviewer)**: Uses `agents/ui-reviewer/AGENT.md` & `skills/design_review.md`. Checks visual hierarchy against Figma/PRD.
+- **Sub-Agent 6A (PR Auditor)**: Uses `agents/pr-auditor/AGENT.md` & `skills/code_review.md`. Validates framework standards and modularity.
+- **Sub-Agent 6B (UI Reviewer)**: Uses `agents/ui-reviewer/AGENT.md` & `skills/design_review.md`. Validates actual UI objectively against the Design Spec.
 - **Wait State**: Orchestrator waits for both sub-agents to return results.
 
-### PHASE 6: Deployment & Release
+### PHASE 7: Deployment & Release
 - **Target Agent**: Solution Architect
 - **Target Skill**: `skills/deployment.md`
 - **Action**: Final environment checks and asset bundling validation.

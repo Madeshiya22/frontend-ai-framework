@@ -30,7 +30,7 @@ Produce a formalized **PR Handoff Report** that evaluates the codebase across Ar
 
 - Implementation source code.
 - Approved Technical Specification.
-- Architecture guidelines (`overview/ARCHITECTURE.md`).
+- Architecture guidelines (`../overview/ARCHITECTURE.md`).
 
 ---
 

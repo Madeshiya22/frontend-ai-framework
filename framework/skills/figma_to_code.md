@@ -30,7 +30,7 @@ Extract every visual specification from the provided design source and produce e
 
 - A design source: Figma link, exported design assets, mockup images, or screenshots (required).
 - Approved Tech Spec (for component names, file paths, and breakpoint reference).
-- Project Design System and token definitions (`overview/DESIGN_SYSTEM.md`).
+- Project Design System and token definitions (`../overview/DESIGN_SYSTEM.md`).
 - Project Research Report (for existing token naming conventions).
 
 ---

@@ -41,7 +41,7 @@ Providing the following improves the precision and depth of the review.
 - **Design Reference** — Figma link, mockup, or Design Specification Document (required for UI/Design Accuracy reviews).
 - **Specific Concerns** — Particular areas to focus on: performance, state management, ARIA usage, mobile layout, token usage, etc.
 - **Breakpoints to Test** — If requesting a responsive review, specify which breakpoints to validate.
-- **Architecture Standard** — Reference to `overview/ARCHITECTURE.md` section or specific pattern to evaluate against.
+- **Architecture Standard** — Reference to `../overview/ARCHITECTURE.md` section or specific pattern to evaluate against.
 - **Known Issues** — Any problems you already suspect — helps the reviewer focus attention efficiently.
 - **Scope Exclusions** — Any files or areas explicitly out of scope for this review.
 

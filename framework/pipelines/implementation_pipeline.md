@@ -60,7 +60,7 @@ If the Tech Spec is missing or unapproved: halt immediately. Return to Planning 
 - Application Analysis Report (required).
 - Project Research Report (required).
 - Design Specification Document (optional — required if design source was provided).
-- Design System guidelines (`overview/DESIGN_SYSTEM.md`) (required).
+- Design System guidelines (`../overview/DESIGN_SYSTEM.md`) (required).
 - Project codebase (required).
 
 ---

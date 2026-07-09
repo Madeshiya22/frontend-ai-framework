@@ -55,7 +55,7 @@ Produce a complete Technical Specification that maps every business requirement 
 
 ## Outputs
 
-- **Technical Specification**: A structured, comprehensive document strictly following the exact schema defined in `skills/create_tech_spec.md`. Do not invent a custom structure; the skill document is the absolute single source of truth for the required 23 enterprise sections.
+- **Technical Specification**: A structured, comprehensive document strictly following the exact schema defined in `../../skills/create_tech_spec.md`. Do not invent a custom structure; the skill document is the absolute single source of truth for the required 23 enterprise sections.
 
 ---
 
@@ -89,7 +89,7 @@ Produce a complete Technical Specification that maps every business requirement 
 ## Validation Rules
 
 Before submitting the Tech Spec to the Orchestrator, you must perform a strict self-audit:
-- [ ] **Schema Compliance:** Does the output strictly adhere to the 23-point schema defined in `skills/create_tech_spec.md` without omission?
+- [ ] **Schema Compliance:** Does the output strictly adhere to the 23-point schema defined in `../../skills/create_tech_spec.md` without omission?
 - [ ] **Enterprise Completeness:** Are all enterprise sections (Security, Performance, Testing, Assets Strategy, Naming Conventions, Definition of Done) fully addressed?
 - [ ] **Executability:** Does the implementation order and folder structure guarantee a smooth execution path for the Frontend Developer with zero ambiguity?
 - [ ] **Reusability:** Are existing components heavily reused to prevent duplication?

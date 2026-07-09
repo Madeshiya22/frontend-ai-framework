@@ -39,7 +39,7 @@ The following fields are mandatory. The AI will halt and request clarification i
 Providing the following improves the precision and safety of the refactoring.
 
 - **Specific Issues to Address** — Concrete problems identified in the code (e.g., "the component mixes data fetching and rendering logic," "this utility is duplicated in 4 files").
-- **Architecture Standard to Align With** — Reference to `overview/ARCHITECTURE.md` or a specific pattern to follow.
+- **Architecture Standard to Align With** — Reference to `../overview/ARCHITECTURE.md` or a specific pattern to follow.
 - **Performance Targets** — If the refactor is performance-focused, define the target metric.
 - **Related Components** — Other components that may be affected by this refactor.
 - **Test Coverage** — Any existing tests that must continue to pass after the refactor.
@@ -157,7 +157,7 @@ Processing this template through the pipeline produces:
 ## Best Practices
 
 - State specific problems — "the component is 400 lines and mixes three concerns" is actionable; "it's messy" is not.
-- Reference the `overview/ARCHITECTURE.md` standard explicitly — the PR Auditor will evaluate against it.
+- Reference the `../overview/ARCHITECTURE.md` standard explicitly — the PR Auditor will evaluate against it.
 - If the refactor affects an exported interface (props, return values), list all consuming components so regression checks can be scoped.
 - For performance refactors, define the target metric before starting — otherwise, there is no success condition.
 - Request a refactoring plan and approve it before implementation — it avoids wasted work if the approach is wrong.

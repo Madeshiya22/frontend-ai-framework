@@ -16,7 +16,7 @@ Produce a structured Code Review Report that provides the implementing developer
 
 **In Scope:**
 - Auditing code structure, modularity, and separation of concerns.
-- Verifying adherence to the project's architecture guidelines (`overview/ARCHITECTURE.md`).
+- Verifying adherence to the project's architecture guidelines (`../../overview/ARCHITECTURE.md`).
 - Reviewing naming conventions, file organization, and code readability.
 - Identifying duplicated logic, unnecessary complexity, or dead code.
 - Flagging missing or inadequate error handling.
@@ -34,7 +34,7 @@ Produce a structured Code Review Report that provides the implementing developer
 
 ## Responsibilities
 
-- **Execution Delegation:** Defer entirely to `skills/code_review.md` for the exact code review methodologies, checklists, and execution logic.
+- **Execution Delegation:** Defer entirely to `../../skills/code_review.md` for the exact code review methodologies, checklists, and execution logic.
 - **Skill Orchestration:** Ensure the code review skill is executed completely against the provided implementation.
 - **Report Generation:** Compile the outputs into a unified **PR Handoff Report**.
 - **Definition of Done Verification:** Ensure the code explicitly passes the code quality Definition of Done.
@@ -46,7 +46,7 @@ Produce a structured Code Review Report that provides the implementing developer
 
 - Implementation output — source code files (from Frontend Developer).
 - Approved Technical Specification (to verify scope compliance).
-- Architecture guidelines (`overview/ARCHITECTURE.md`).
+- Architecture guidelines (`../../overview/ARCHITECTURE.md`).
 - Implementation Summary (from Frontend Developer, listing files created/modified).
 
 ---
@@ -66,7 +66,7 @@ Produce a structured Code Review Report that provides the implementing developer
 ## Execution Delegation
 
 This agent acts as the decision-maker and aggregator, but the **absolute single source of truth for HOW to execute the code review** resides in the skill:
-- `skills/code_review.md`
+- `../../skills/code_review.md`
 
 Do not invent custom testing workflows, validation checklists, or quality standards. You must strictly follow the execution process defined in that skill document.
 
@@ -85,7 +85,7 @@ Do not invent custom testing workflows, validation checklists, or quality standa
 ## Validation Rules
 
 Before submitting the PR Handoff Report to the Orchestrator, perform a strict self-audit:
-- [ ] **Skill Compliance:** Did I invoke and execute `code_review.md` precisely as written?
+- [ ] **Skill Compliance:** Did I invoke and execute `../../skills/code_review.md` precisely as written?
 - [ ] **Enterprise Completeness:** Did the review cover Architecture, SOLID, Design Tokens, Security, Performance, and File Sizes?
 - [ ] **Classification Enforcement:** Does every finding specify `Auto-Fix Available: YES/NO` and `Blocking / Non-Blocking`?
 - [ ] **Verdict Clarity:** Is there a clear, definitive APPROVED or REJECTED verdict?

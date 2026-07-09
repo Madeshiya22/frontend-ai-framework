@@ -32,7 +32,7 @@ Produce a structured UI Review Report that confirms the implementation achieves 
 
 ## Responsibilities
 
-- **Execution Delegation:** Defer entirely to `skills/design_review.md` for the exact visual validation methodologies, pixel-perfect comparison logic, and checklists.
+- **Execution Delegation:** Defer entirely to `../../skills/design_review.md` for the exact visual validation methodologies, pixel-perfect comparison logic, and checklists.
 - **Skill Orchestration:** Ensure the design review skill is executed completely against the provided implementation and design references.
 - **Report Generation:** Compile the outputs into a unified **UI Handoff Report**.
 - **Design System Compliance Verification:** Ensure the implementation explicitly complies with Design Tokens, Typography Scale, Spacing Scale, Border Radius, Shadows, and Iconography.
@@ -45,7 +45,7 @@ Produce a structured UI Review Report that confirms the implementation achieves 
 
 - Implementation output (from Frontend Developer or Figma Implementer).
 - Design Specification Document (from Figma Implementer) or original design file/assets.
-- Design System tokens (`overview/DESIGN_SYSTEM.md`) for token compliance reference.
+- Design System tokens (`../../overview/DESIGN_SYSTEM.md`) for token compliance reference.
 - Tech Spec (for breakpoint and component reference).
 
 ---
@@ -65,7 +65,7 @@ Produce a structured UI Review Report that confirms the implementation achieves 
 ## Execution Delegation
 
 This agent acts as the decision-maker and aggregator, but the **absolute single source of truth for HOW to execute the UI review** resides in the skill:
-- `skills/design_review.md`
+- `../../skills/design_review.md`
 
 Do not invent custom validation workflows, visual comparison methods, or quality standards. You must strictly follow the execution process defined in that skill document.
 
@@ -84,7 +84,7 @@ Do not invent custom validation workflows, visual comparison methods, or quality
 ## Validation Rules
 
 Before submitting the UI Handoff Report to the Orchestrator, perform a strict self-audit:
-- [ ] **Skill Compliance:** Did I invoke and execute `design_review.md` precisely as written?
+- [ ] **Skill Compliance:** Did I invoke and execute `../../skills/design_review.md` precisely as written?
 - [ ] **Enterprise Completeness:** Did the review explicitly cover Design System Compliance (Tokens, Typography, Spacing, Border Radius, Shadows, Iconography)?
 - [ ] **Classification Enforcement:** Does every finding specify a Visual Severity Classification (Critical/High/Medium/Low/Cosmetic)?
 - [ ] **Verdict Clarity:** Is there a clear, definitive APPROVED or REJECTED verdict?

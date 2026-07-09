@@ -33,7 +33,7 @@ Systematically test the implementation against the approved PRD and Tech Spec, p
 
 ## Responsibilities
 
-- **Execution Delegation:** Defer entirely to the QA skills (`responsive.md`, `accessibility.md`, `functional_testing.md`) for the exact testing methodologies, checklists, and execution logic.
+- **Execution Delegation:** Defer entirely to the QA skills (`../../skills/responsive.md`, `../../skills/accessibility.md`, `../../skills/functional_testing.md`) for the exact testing methodologies, checklists, and execution logic.
 - **Skill Orchestration:** Ensure all three QA skills are executed completely against the provided implementation.
 - **Report Aggregation:** Compile the outputs from all three skills into a unified **QA Handoff Report**.
 - **Definition of Done Verification:** Ensure the aggregated results strictly meet the Tech Spec's explicit exit criteria.
@@ -66,9 +66,9 @@ Systematically test the implementation against the approved PRD and Tech Spec, p
 ## Execution Delegation
 
 This agent acts as the decision-maker and aggregator, but the **absolute single source of truth for HOW to execute the tests** resides in the skills:
-- `skills/responsive.md`
-- `skills/accessibility.md`
-- `skills/functional_testing.md`
+- `../../skills/responsive.md`
+- `../../skills/accessibility.md`
+- `../../skills/functional_testing.md`
 
 Do not invent custom testing workflows, validation checklists, or quality standards. You must strictly follow the execution processes defined in those skill documents.
 
@@ -87,7 +87,7 @@ Do not invent custom testing workflows, validation checklists, or quality standa
 ## Validation Rules
 
 Before submitting the unified QA Handoff Report to the Orchestrator, perform a strict self-audit:
-- [ ] **Skill Compliance:** Did I invoke and execute `responsive.md`, `accessibility.md`, and `functional_testing.md` precisely as written?
+- [ ] **Skill Compliance:** Did I invoke and execute `../../skills/responsive.md`, `../../skills/accessibility.md`, and `../../skills/functional_testing.md` precisely as written?
 - [ ] **Aggregation:** Are all three skill reports accurately compiled into a single QA Handoff Report?
 - [ ] **Verdict Clarity:** Is there a clear, definitive APPROVED or REJECTED verdict based on the combined findings?
 - [ ] **Definition of Done:** Does the combined report explicitly prove that the Tech Spec's Definition of Done was met?

@@ -31,7 +31,7 @@ Produce a formalized **UI Handoff Report** that evaluates the frontend implement
 - Implementation source code / rendered UI preview.
 - Approved Technical Specification.
 - Design Specification Document (or Figma files).
-- Design System guidelines (`overview/DESIGN_SYSTEM.md`).
+- Design System guidelines (`../overview/DESIGN_SYSTEM.md`).
 
 ---
 

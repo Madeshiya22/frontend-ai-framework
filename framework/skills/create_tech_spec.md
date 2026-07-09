@@ -30,7 +30,7 @@ Produce a Technical Specification that maps every PRD requirement to a concrete 
 - Approved PRD (from `create_prd.md` skill, reviewed and approved by the user).
 - Application Analysis Report (from `website_analysis.md` skill).
 - Project Research Report (from `project_research.md` skill — styling and utility patterns).
-- Access to the project's architecture guidelines (`overview/ARCHITECTURE.md`).
+- Access to the project's architecture guidelines (`../overview/ARCHITECTURE.md`).
 - Confirmed technology stack.
 
 ---
@@ -40,7 +40,7 @@ Produce a Technical Specification that maps every PRD requirement to a concrete 
 - Approved PRD (required).
 - Application Analysis Report (required).
 - Project Research Report (required).
-- Architecture guidelines (`overview/ARCHITECTURE.md`) (required).
+- Architecture guidelines (`../overview/ARCHITECTURE.md`) (required).
 - Figma Design Specification or mockups (optional — if available, referenced in Tech Spec).
 
 ---

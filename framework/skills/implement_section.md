@@ -33,7 +33,7 @@ Produce clean, modular, accessible, and responsive implementation code that prec
 - Application Analysis Report (to know which existing components to reuse).
 - Project Research Report (to apply correct styling patterns and token names).
 - Design Specification Document (from `figma_to_code.md`, if design was provided).
-- Design System guidelines (`overview/DESIGN_SYSTEM.md`).
+- Design System guidelines (`../overview/DESIGN_SYSTEM.md`).
 - Access to the project's source code.
 
 ---
@@ -71,7 +71,7 @@ You must strictly execute the following sequence. Do not skip any phases.
 - Verify that the Target Project Directory is exactly `<Framework Root>/<Project Name>`. If the Target Project Directory is outside the Framework Root, **STOP**. Do not execute any scaffold commands. Report the reason to the user.
 - Verify the Technical Specification is explicitly APPROVED by the user.
 - Verify the Design System and design tokens are loaded in context.
-- Verify the Architecture document (`overview/ARCHITECTURE.md`) has been reviewed.
+- Verify the Architecture document (`../overview/ARCHITECTURE.md`) has been reviewed.
 - Verify all required existing components and dependencies identified in the Tech Spec exist in the project.
 
 ### Phase 2: Existing Code Analysis

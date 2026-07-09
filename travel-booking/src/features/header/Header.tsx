@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Plane } from "lucide-react";
 import { Button } from "../../shared/ui/Button";
 
@@ -20,25 +21,25 @@ export function Header() {
         <nav className="hidden md:flex items-center gap-6">
           <a
             href="#destinations"
-            className="text-sm font-medium text-slate-600 hover:text-primary-600 transition-colors"
+            className="text-sm font-medium text-slate-600 hover:text-primary-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-md px-2 py-1 transition-colors"
           >
             Destinations
           </a>
           <a
             href="#packages"
-            className="text-sm font-medium text-slate-600 hover:text-primary-600 transition-colors"
+            className="text-sm font-medium text-slate-600 hover:text-primary-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-md px-2 py-1 transition-colors"
           >
             Packages
           </a>
           <a
             href="#testimonials"
-            className="text-sm font-medium text-slate-600 hover:text-primary-600 transition-colors"
+            className="text-sm font-medium text-slate-600 hover:text-primary-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-md px-2 py-1 transition-colors"
           >
             Testimonials
           </a>
           <a
             href="#faq"
-            className="text-sm font-medium text-slate-600 hover:text-primary-600 transition-colors"
+            className="text-sm font-medium text-slate-600 hover:text-primary-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-md px-2 py-1 transition-colors"
           >
             FAQ
           </a>
@@ -65,46 +66,57 @@ export function Header() {
       </div>
 
       {/* Mobile Navigation */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden border-t border-slate-200 bg-white">
-          <nav className="flex flex-col px-4 py-4 space-y-4">
-            <a
-              href="#destinations"
-              className="text-sm font-medium text-slate-600 hover:text-primary-600"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Destinations
-            </a>
-            <a
-              href="#packages"
-              className="text-sm font-medium text-slate-600 hover:text-primary-600"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Packages
-            </a>
-            <a
-              href="#testimonials"
-              className="text-sm font-medium text-slate-600 hover:text-primary-600"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Testimonials
-            </a>
-            <a
-              href="#faq"
-              className="text-sm font-medium text-slate-600 hover:text-primary-600"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              FAQ
-            </a>
-            <div className="pt-2">
-              <Button variant="primary" className="w-full">
-                Book Now
-              </Button>
-            </div>
-          </nav>
-        </div>
-      )}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div 
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden border-t border-slate-200 bg-white overflow-hidden"
+          >
+            <nav className="flex flex-col px-4 py-4 space-y-4">
+              <a
+                href="#destinations"
+                className="text-sm font-medium text-slate-600 hover:text-primary-600"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Destinations
+              </a>
+              <a
+                href="#packages"
+                className="text-sm font-medium text-slate-600 hover:text-primary-600"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Packages
+              </a>
+              <a
+                href="#testimonials"
+                className="text-sm font-medium text-slate-600 hover:text-primary-600"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Testimonials
+              </a>
+              <a
+                href="#faq"
+                className="text-sm font-medium text-slate-600 hover:text-primary-600"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                FAQ
+              </a>
+              <div className="pt-2">
+                <Button variant="primary" className="w-full">
+                  Book Now
+                </Button>
+              </div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
+
+
+
 

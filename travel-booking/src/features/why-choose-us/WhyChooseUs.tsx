@@ -21,7 +21,7 @@ export function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-20 bg-slate-50" id="why-choose-us">
+    <section className="py-12 md:py-20 lg:py-24 bg-slate-50" id="why-choose-us">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Why Choose TravelExplore?</h2>
@@ -49,4 +49,5 @@ export function WhyChooseUs() {
     </section>
   );
 }
+
 

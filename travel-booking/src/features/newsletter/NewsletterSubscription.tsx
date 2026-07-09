@@ -44,18 +44,21 @@ export function NewsletterSubscription() {
   };
 
   return (
-    <section className="py-20 bg-primary-600 relative overflow-hidden" id="newsletter">
-      {/* Background Decor */}
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary-500 rounded-full blur-3xl opacity-50 pointer-events-none" />
-      <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-primary-700 rounded-full blur-3xl opacity-50 pointer-events-none" />
+    <section className="py-12 md:py-20 lg:py-24 bg-slate-950 relative overflow-hidden" id="newsletter">
+      {/* Premium Background Decor */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent" />
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary-600 rounded-full blur-[100px] opacity-20 pointer-events-none" />
+      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-secondary-600 rounded-full blur-[100px] opacity-10 pointer-events-none" />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-2xl mx-auto text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-white/20 shadow-2xl">
-          <Mail className="h-12 w-12 text-primary-200 mx-auto mb-6" />
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+        <div className="max-w-3xl mx-auto text-center bg-slate-900/50 backdrop-blur-2xl rounded-[2.5rem] p-10 md:p-16 border border-white/5 shadow-[0_0_50px_-12px_rgba(0,0,0,0.5)]">
+          <div className="bg-gradient-to-br from-primary-500/20 to-primary-600/10 w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-8 border border-primary-500/20">
+            <Mail className="h-10 w-10 text-primary-400" />
+          </div>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
             Get Travel Updates & Deals
           </h2>
-          <p className="text-primary-100 mb-8">
+          <p className="text-slate-400 text-lg md:text-xl mb-10 font-light max-w-2xl mx-auto">
             Subscribe to our newsletter and be the first to know about exclusive packages and hidden gem destinations.
           </p>
 
@@ -101,4 +104,5 @@ export function NewsletterSubscription() {
     </section>
   );
 }
+
 

@@ -1,22 +1,56 @@
+import { motion, type Variants } from "framer-motion";
 import { Star, MapPin, Clock } from "lucide-react";
 import { mockPackages } from "./data";
 import { Card, CardContent, CardFooter } from "../../shared/ui/Card";
 import { Button } from "../../shared/ui/Button";
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 }
+  }
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { type: "spring", stiffness: 300, damping: 24 }
+  }
+};
+
 export function FeaturedPackages() {
   return (
-    <section className="py-20 bg-white" id="packages">
+    <section className="py-12 md:py-20 lg:py-24 bg-white" id="packages">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-2xl mx-auto mb-16"
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Featured Travel Packages</h2>
           <p className="text-slate-600">
             Handpicked itineraries designed to give you the ultimate travel experience without the stress of planning.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {mockPackages.map((pkg) => (
-            <Card key={pkg.id} className="group flex flex-col border-0 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+            <Card 
+              key={pkg.id} 
+              variants={itemVariants}
+              className="group flex flex-col border-0 shadow-lg"
+            >
               <div className="relative h-64 overflow-hidden">
                 <img 
                   src={pkg.imageUrl} 
@@ -61,9 +95,11 @@ export function FeaturedPackages() {
               </CardFooter>
             </Card>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
+
+
 

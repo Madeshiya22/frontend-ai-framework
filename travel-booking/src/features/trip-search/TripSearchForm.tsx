@@ -45,8 +45,8 @@ export function TripSearchForm() {
   };
 
   return (
-    <div className="relative -mt-32 z-20 container mx-auto px-4 max-w-5xl">
-      <div className="glass rounded-3xl p-6 md:p-10">
+    <div className="relative -mt-16 sm:-mt-24 md:-mt-32 z-20 container mx-auto px-4 max-w-5xl">
+      <div className="glass rounded-3xl p-5 sm:p-6 md:p-10">
         <form onSubmit={handleSubmit} className="flex flex-col md:flex-row items-start md:items-end gap-4">
           <div className="w-full md:flex-1 space-y-2">
             <label htmlFor="destination" className="text-sm font-semibold text-slate-700 flex items-center gap-2">
@@ -128,4 +128,5 @@ export function TripSearchForm() {
     </div>
   );
 }
+
 

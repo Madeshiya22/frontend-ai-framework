@@ -26,7 +26,7 @@ export const mockPackages: Package[] = [
     destination: "Tokyo & Kyoto",
     duration: "10 Days",
     price: 2499,
-    imageUrl: "https://images.unsplash.com/photo-1542051812871-757500829871?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80",
     rating: 4.9,
     reviews: 89,
   },

@@ -64,51 +64,69 @@ Before beginning, analyze the user request and select the appropriate pipeline:
 ## 4. Pipeline Execution: Phase by Phase
 
 ### PHASE 1: Requirement Analysis
-- **Target Agent**: Product Manager (`agents/product-manager/AGENT.md`)
-- **Target Skill**: `skills/create_prd.md`
-- **Action**: Spawn Sub-Agent. Feed user request.
-- **Output Validation**: Ensure PRD contains all required sections.
-- **🛑 APPROVAL GATE**: Display PRD summary. **CRITICAL HARD STOP:** Stop response generation immediately. Do not generate content for Phase 2. Do not assume user approval. Wait for an explicit user response (e.g., "Approve" or "Proceed").
+- **Target Agent**: Product Manager (gents/product-manager/AGENT.md)
+- **Target Skill**: skills/create_prd.md
+- **?? APPROVAL GATE**: Display PRD summary. Wait for user approval.
 
-### PHASE 2: Technical Planning
-- **Target Agent**: Solution Architect (`agents/solution-architect/AGENT.md`)
-- **Target Skills**: `skills/create_tech_spec.md`, `skills/website_analysis.md`, `skills/project_research.md`
-- **Action**: Spawn Sub-Agent. Feed approved PRD.
-- **Output Validation**: Ensure component hierarchy, routing, and file changes are mapped to the chosen Tech Stack.
-- **🛑 APPROVAL GATE**: Display Tech Spec summary. **CRITICAL HARD STOP:** Stop response generation immediately. Do not generate content for Phase 3. Do not assume user approval. Wait for an explicit user response (e.g., "Approve" or "Proceed").
+### PHASE 2: Technical Specification
+- **Target Agent**: Solution Architect (gents/solution-architect/AGENT.md)
+- **Target Skill**: skills/create_tech_spec.md
+- **?? APPROVAL GATE**: Display Tech Spec summary. Wait for user approval.
 
-### PHASE 3: Design Specification
-- **Target Agent**: UI/UX Designer (`agents/ui-ux-designer/AGENT.md`)
-- **Target Skill**: `skills/create_design_spec.md`
-- **Action**: Spawn Sub-Agent. Feed approved Tech Spec and PRD.
-- **Output Validation**: Ensure the Design Specification explicitly defines the visual language, typography, color palettes, and component standards.
-- **🛑 APPROVAL GATE**: Display Design Spec summary. **CRITICAL HARD STOP:** Stop response generation immediately. Do not generate content for Phase 4. Do not assume user approval. Wait for an explicit user response.
+### PHASE 3: Design Specification (Mandatory)
+- **Target Agent**: UI/UX Designer (gents/ui-ux-designer/AGENT.md)
+- **Target Skill**: skills/create_design_spec.md
+- **?? APPROVAL GATE**: Display Design Spec summary. Wait for user approval.
 
 ### PHASE 4: Implementation
-- **Target Agent**: Frontend Developer (`agents/frontend-developer/AGENT.md`)
-- **Target Skill**: `skills/implement_section.md`
-- **Action**: Spawn Sub-Agent. Feed approved Design Spec, Tech Spec, and Architecture context.
-- **Execution**: Sub-agent writes code corresponding to the selected stack (React, Vue, Next.js, HTML/CSS).
-- **Output Validation**: Code generated without destructive overwrites. 
-- **Auto-Proceed**: Move immediately to Phase 5 for validation. No user approval needed here.
+- **Target Agent**: Frontend Developer (gents/frontend-developer/AGENT.md)
+- **Target Skill**: skills/implement_section.md
+- **Auto-Proceed**: Move immediately to Phase 5.
 
-### PHASE 5: Parallel Validation (QA & Accessibility)
-- **Action**: Spawn 2 Parallel Sub-Agents.
-- **Sub-Agent 5A (QA Engineer)**: Uses `skills/responsive.md`. Tests breakpoints and functionality.
-- **Sub-Agent 5B (QA Engineer)**: Uses `skills/accessibility.md`. Tests semantic markup, ARIA, and contrast.
-- **Wait State**: Orchestrator waits for both sub-agents to return results.
-
-### PHASE 6: Code Audit & Design Review
-- **Action**: Spawn 2 Parallel Sub-Agents.
-- **Sub-Agent 6A (PR Auditor)**: Uses `agents/pr-auditor/AGENT.md` & `skills/code_review.md`. Validates framework standards and modularity.
-- **Sub-Agent 6B (UI Reviewer)**: Uses `agents/ui-reviewer/AGENT.md` & `skills/design_review.md`. Validates actual UI objectively against the Design Spec.
-- **Wait State**: Orchestrator waits for both sub-agents to return results.
-
-### PHASE 7: Deployment & Release
+### PHASE 5: Build Verification
 - **Target Agent**: Solution Architect
-- **Target Skill**: `skills/deployment.md`
-- **Action**: Final environment checks and asset bundling validation.
-- **🛑 APPROVAL GATE**: Final Release Sign-off. **CRITICAL HARD STOP:** Stop response generation immediately. Do not generate any post-release content. Do not assume user approval. Wait for an explicit user response.
+- **Action**: Run 	sc -b && vite build. Ensure 0 errors.
+
+### PHASE 6: UI/UX Enhancement
+- **Target Agent**: Frontend Developer
+- **Action**: Apply premium design touches based exactly on Design Spec.
+
+### PHASE 7: Responsive Polish
+- **Target Agent**: QA Engineer / Frontend Developer
+- **Target Skill**: skills/responsive.md
+- **Action**: Ensure perfect layout on all breakpoints.
+
+### PHASE 8: Accessibility Polish
+- **Target Agent**: QA Engineer / Frontend Developer
+- **Target Skill**: skills/accessibility.md
+- **Action**: Ensure ARIA and WCAG compliance.
+
+### PHASE 9: Animations
+- **Target Agent**: Frontend Developer
+- **Action**: Implement premium animations based on Design Spec motion guidelines.
+
+### PHASE 10: Performance Optimization
+- **Target Agent**: Solution Architect
+- **Action**: Code splitting, LCP preload, lazy loading.
+
+### PHASE 11: QA Review
+- **Target Agent**: QA Engineer
+- **Action**: Comprehensive functional validation.
+
+### PHASE 12: PR Audit
+- **Target Agent**: PR Auditor
+- **Target Skill**: skills/code_review.md
+- **Action**: Framework standards validation.
+
+### PHASE 13: UI Review
+- **Target Agent**: UI Reviewer
+- **Target Skill**: skills/design_review.md
+- **Action**: Strictly compare Actual UI vs DESIGN_SPEC (PASS/FAIL).
+
+### PHASE 14: Deployment
+- **Target Agent**: Solution Architect
+- **Target Skill**: skills/deployment.md
+- **?? APPROVAL GATE**: Final Release Sign-off. Wait for explicit user response.
 
 ---
 
@@ -161,3 +179,4 @@ When all 6 phases complete successfully, synthesize the final outputs into a Uni
 
 End the pipeline with:
 `[SYSTEM] Pipeline Execution Complete. Awaiting next command.`
+

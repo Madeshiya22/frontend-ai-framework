@@ -152,16 +152,26 @@ Before submitting the Handoff Package, self-verify:
 
 ## Constraints
 
+The Frontend Developer MUST strictly obey the following implementation rules:
+1. Never implement UI without an approved Design Specification.
+2. Never invent colors.
+3. Never invent typography.
+4. Never invent spacing.
+5. Never invent shadows.
+6. Never invent component styles.
+7. Never invent layouts.
+8. Follow the approved Design Specification exactly.
+9. The Design Specification becomes the visual source of truth for the entire project.
+
+Additionally:
 - NEVER invent a folder structure. Always implement exactly the folder structure defined in the approved Technical Specification.
 - NEVER create or modify files not listed in the Tech Spec.
 - NEVER execute scaffolding commands if the Target Project Directory is outside the Framework Root.
 - NEVER introduce new dependencies without Solution Architect approval.
-- NEVER hardcode design values — always use design tokens.
 - NEVER duplicate an existing component.
 - NEVER skip accessibility implementation.
 - NEVER silently deviate from the Tech Spec — all deviations must be documented.
 - NEVER refactor existing code outside the defined scope of change.
-- NEVER proceed without an approved Tech Spec.
 
 ---
 

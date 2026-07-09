@@ -63,44 +63,46 @@ This workflow is triggered when the Orchestrator receives a request through:
 ## Workflow Stages
 
 ### Stage 1: Requirement Analysis
-Validate the incoming request. Route to the Product Manager Agent to generate a structured PRD from the feature request. All ambiguities must be resolved before proceeding.
+Validate the incoming request. Route to the Product Manager Agent to generate a structured PRD.
 
-### Stage 2: [Handoff to Orchestrator: Phase 1 Approval Gate]
-Present the PRD to the user. Yield control to `../ORCHESTRATOR.md` to enforce the global LLM Hard Stop.
+### Stage 2: Technical Specification
+The Solution Architect designs the complete implementation plan.
 
-### Stage 3: Application Analysis
-The Solution Architect executes `../skills/website_analysis.md` and `../skills/project_research.md` to fully understand the existing codebase, component inventory, and styling system before designing anything.
+### Stage 3: Design Specification (Mandatory)
+The UI/UX Designer executes ../skills/create_design_spec.md to define the comprehensive visual language.
 
-### Stage 4: Technical Specification
-The Solution Architect designs the complete implementation plan — component hierarchy, files to create/modify, technology stack confirmation, implementation order, and risk assessment.
+### Stage 4: Implementation
+The Frontend Developer executes ../skills/implement_section.md following PRD + TECH_SPEC + DESIGN_SPEC exactly.
 
-### Stage 5: [Handoff to Orchestrator: Phase 2 Approval Gate]
-Present the Technical Specification to the user. Yield control to `../ORCHESTRATOR.md` to enforce the global LLM Hard Stop.
+### Stage 5: Build Verification
+Run compilation and build checks to ensure 0 errors.
 
-### Stage 6: Design Specification
-The UI/UX Designer executes `../skills/create_design_spec.md` to define the comprehensive visual language, typography, color palette, spacing system, component styles, and responsiveness guidelines. This creates the DESIGN_SPEC.md which acts as the ultimate visual source of truth.
+### Stage 6: UI/UX Enhancement
+Frontend Developer applies premium design touches exactly as defined in the Design Spec.
 
-### Stage 7: [Handoff to Orchestrator: Phase 3 Approval Gate]
-Present the Design Specification to the user. Yield control to `../ORCHESTRATOR.md` to enforce the global LLM Hard Stop.
+### Stage 7: Responsive Polish
+Ensure mobile, tablet, and desktop layout perfection.
 
-### Stage 8: Implementation
-The Frontend Developer executes `../skills/implement_section.md`, writing all components, styles, and logic exactly as defined in the approved Tech Spec AND the approved Design Spec. The developer MUST NOT invent UI.
+### Stage 8: Accessibility Polish
+Implement WCAG AA compliance and ARIA labels.
 
-### Stage 9: Parallel Review
-Four agents run simultaneously:
-- QA Engineer: `../skills/responsive.md`
-- QA Engineer: `../skills/accessibility.md`
-- PR Auditor: `../skills/code_review.md`
-- UI Reviewer: `../skills/design_review.md` (Validates objective compliance with the Design Spec)
+### Stage 9: Animations
+Add Framer Motion or CSS transitions as planned in the Design Spec.
 
-### Stage 10: Review Score Aggregation
-All review reports are collected and scored. The aggregated score determines the next action.
+### Stage 10: Performance Optimization
+Code splitting, lazy loading, LCP optimization.
 
-### Stage 11: Deployment Readiness
-If all reviews pass, the Solution Architect executes `../skills/deployment.md` to perform final build and environment validation.
+### Stage 11: QA Review
+QA Engineer validates functional correctness.
 
-### Stage 12: [Handoff to Orchestrator: Phase 7 Final Release Approval Gate]
-Present the Unified Delivery Report to the user. Yield control to `../ORCHESTRATOR.md` to enforce the global LLM Hard Stop before authorizing release.
+### Stage 12: PR Audit
+PR Auditor validates framework compliance and modularity.
+
+### Stage 13: UI Review
+UI Reviewer strictly compares Actual UI against DESIGN_SPEC for PASS/FAIL.
+
+### Stage 14: Deployment Readiness
+Solution Architect validates environment and authorizes release.
 
 ---
 
@@ -108,6 +110,22 @@ Present the Unified Delivery Report to the user. Yield control to `../ORCHESTRAT
 
 | Stage | Agent |
 |-------|-------|
+| 1. Requirement Analysis | Product Manager |
+| 2. Technical Specification | Solution Architect |
+| 3. Design Specification | UI/UX Designer |
+| 4. Implementation | Frontend Developer |
+| 5. Build Verification | Solution Architect |
+| 6. UI/UX Enhancement | Frontend Developer |
+| 7. Responsive Polish | Frontend Developer / QA |
+| 8. Accessibility Polish | Frontend Developer / QA |
+| 9. Animations | Frontend Developer |
+| 10. Performance Optimization | Solution Architect |
+| 11. QA Review | QA Engineer |
+| 12. PR Audit | PR Auditor |
+| 13. UI Review | UI Reviewer |
+| 14. Deployment Readiness | Solution Architect |
+
+-------|-------|
 | Requirement Analysis | Product Manager |
 | Application Analysis | Solution Architect |
 | Technical Specification | Solution Architect |
@@ -196,3 +214,4 @@ This workflow is considered complete when:
 ## Handoff
 
 Upon successful completion, the Orchestrator delivers the Unified Delivery Report to the user and enters standby: `[SYSTEM] Pipeline Execution Complete. Awaiting next command.`
+

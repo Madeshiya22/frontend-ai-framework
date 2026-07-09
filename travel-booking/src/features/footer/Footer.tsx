@@ -1,4 +1,4 @@
-import { Plane, Facebook, Twitter, Instagram } from "lucide-react";
+import { Plane, MessageCircle, Share2, Heart } from "lucide-react";
 
 export function Footer() {
   return (
@@ -76,21 +76,21 @@ export function Footer() {
               className="text-slate-400 hover:text-white transition-colors"
               aria-label="Facebook"
             >
-              <Facebook className="h-5 w-5" />
+              <MessageCircle className="h-5 w-5" />
             </a>
             <a
               href="#"
               className="text-slate-400 hover:text-white transition-colors"
               aria-label="Twitter"
             >
-              <Twitter className="h-5 w-5" />
+              <Share2 className="h-5 w-5" />
             </a>
             <a
               href="#"
               className="text-slate-400 hover:text-white transition-colors"
               aria-label="Instagram"
             >
-              <Instagram className="h-5 w-5" />
+              <Heart className="h-5 w-5" />
             </a>
           </div>
         </div>
@@ -102,3 +102,5 @@ export function Footer() {
     </footer>
   );
 }
+
+

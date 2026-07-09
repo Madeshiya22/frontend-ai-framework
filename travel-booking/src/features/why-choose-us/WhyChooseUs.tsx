@@ -1,5 +1,5 @@
 import { Shield, Map, Compass } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardContent } from "../ui/Card";
+import { Card, CardHeader, CardTitle, CardContent } from "../../shared/ui/Card";
 
 export function WhyChooseUs() {
   const features = [
@@ -32,13 +32,15 @@ export function WhyChooseUs() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, idx) => (
-            <Card key={idx} className="border-none shadow-md hover:shadow-lg transition-shadow bg-white text-center flex flex-col items-center">
-              <CardHeader className="items-center pb-2">
-                {feature.icon}
-                <CardTitle className="text-xl">{feature.title}</CardTitle>
+            <Card key={idx} className="border-0 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 bg-white text-center flex flex-col items-center p-4">
+              <CardHeader className="items-center pb-4">
+                <div className="bg-primary-50 p-4 rounded-full mb-4 shadow-inner">
+                  {feature.icon}
+                </div>
+                <CardTitle className="text-2xl font-bold">{feature.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-slate-600">{feature.description}</p>
+                <p className="text-slate-600 font-medium leading-relaxed">{feature.description}</p>
               </CardContent>
             </Card>
           ))}
@@ -47,3 +49,4 @@ export function WhyChooseUs() {
     </section>
   );
 }
+

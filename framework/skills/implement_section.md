@@ -52,10 +52,11 @@ Produce clean, modular, accessible, and responsive implementation code that prec
 
 The skill must always return a formal **Handoff Package** containing:
 1. **Change Classification**: Explicit list of NEW Files, MODIFIED Files, and UNCHANGED Files.
-2. **File Impact Report**: Proof that the blast radius of modified files was assessed.
-3. **Traceability Matrix**: Mapping every implemented component/feature directly back to the exact requirement in the Technical Specification.
-4. **Validation Summary**: Results of the post-implementation validation (Responsive, A11y, Performance, DoD).
-5. **Known Limitations**: Any deviations, technical debt, or unresolvable edge cases (if any).
+2. **Architecture Compliance Report**: Proof that folder structure, feature boundaries, and dependency rules were strictly followed.
+3. **File Impact Report**: Proof that the blast radius of modified files was assessed.
+4. **Traceability Matrix**: Mapping every implemented component/feature directly back to the exact requirement in the Technical Specification.
+5. **Validation Summary**: Results of the post-implementation validation (Responsive, A11y, Performance, DoD).
+6. **Known Limitations**: Any deviations, technical debt, or unresolvable edge cases (if any).
 
 ---
 
@@ -74,18 +75,30 @@ You must strictly execute the following sequence. Do not skip any phases.
 - Verify the Architecture document (`../overview/ARCHITECTURE.md`) has been reviewed.
 - Verify all required existing components and dependencies identified in the Tech Spec exist in the project.
 
-### Phase 2: Existing Code Analysis
+### Phase 2: Architecture Validation
+- **Identify Architecture:** Determine the approved architecture (Lightweight, Modular, or Enterprise Feature-Based) from the Technical Specification.
+- **Strict Compliance:** The Frontend Developer must NEVER invent a folder structure. The generated code must strictly follow the approved architecture.
+- **Boundary Verification:** Before creating or modifying files, verify:
+  - Folder structure compliance
+  - Feature boundaries
+  - Shared module usage
+  - Dependency rules
+  - No circular dependencies
+  - No feature-to-feature imports (unless explicitly allowed by the Architecture document)
+- **Violation Handling:** If the implementation attempts to create a folder outside the approved architecture or violates a boundary rule, **STOP** and report an architecture violation.
+
+### Phase 3: Existing Code Analysis
 - **Reuse Strategy:** Exhaustively search for reusable components before creating any new ones. Extend existing components whenever possible.
 - **File Impact Analysis:** Before modifying any existing file, trace its imports and dependents. Identify all affected modules to ensure no side effects are introduced.
 
-### Phase 3: Implementation Execution
+### Phase 4: Implementation Execution
 - Follow the approved Technical Specification exactly. Do not invent new requirements.
 - **Design Tokens:** Use Design Tokens for all styling (colors, spacing, typography). Never hardcode magic numbers.
 - **Component Rules:** Maintain responsive-first (mobile-up) and accessibility-first (semantic HTML, ARIA) implementation standards on every single file.
 - **Modularity:** Keep components small, modular, and focused on a single responsibility.
 - **Strict Scope:** Do not modify unrelated files. Do not refactor code outside the explicit scope of the Tech Spec.
 
-### Phase 4: Post-Implementation Validation
+### Phase 5: Post-Implementation Validation
 Before generating the Handoff Package, perform a strict self-review:
 - **Traceability:** Validate every component against the Technical Specification.
 - **Definition of Done (DoD):** Validate that the feature meets the Tech Spec's explicit DoD / Exit Criteria.
@@ -93,8 +106,8 @@ Before generating the Handoff Package, perform a strict self-review:
 - **Accessibility:** Validate keyboard navigation, focus states, and ARIA compliance.
 - **Performance:** Validate performance considerations (e.g., lazy loading, asset optimization as defined in the Tech Spec).
 
-### Phase 5: Handoff Package Generation
-- Generate the final Handoff Package (Change Classification, Impact Report, Traceability Matrix, Validation Summary, Known Limitations).
+### Phase 6: Handoff Package Generation
+- Generate the final Handoff Package (Change Classification, Architecture Compliance Report, Impact Report, Traceability Matrix, Validation Summary, Known Limitations).
 - Submit the implementation and the Handoff Package to the Orchestrator.
 
 ---
@@ -103,11 +116,12 @@ Before generating the Handoff Package, perform a strict self-review:
 
 Before submitting the Handoff Package, self-verify:
 - [ ] **Pre-Implementation:** Were all prerequisites and architecture constraints verified?
+- [ ] **Architecture Compliance:** Was the Architecture Validation phase executed and passed?
 - [ ] **Reuse & Impact:** Was the Existing Code Analysis (Reuse & File Impact) performed before coding?
 - [ ] **Execution:** Is the code responsive-first, accessibility-first, and exclusively using design tokens?
 - [ ] **Traceability & DoD:** Does every line of code trace back to the Tech Spec, and is the Definition of Done satisfied?
 - [ ] **Scope:** Are there zero modifications to unrelated files?
-- [ ] **Handoff Package:** Are all 5 required elements (Classification, Impact Report, Traceability, Validation, Limitations) included in the final output?
+- [ ] **Handoff Package:** Are all 6 required elements (Classification, Architecture Compliance Report, Impact Report, Traceability, Validation, Limitations) included in the final output?
 
 ---
 
@@ -136,6 +150,7 @@ Before submitting the Handoff Package, self-verify:
 
 ## Constraints
 
+- NEVER invent a folder structure. Always implement exactly the folder structure defined in the approved Technical Specification.
 - NEVER create or modify files not listed in the Tech Spec.
 - NEVER execute scaffolding commands if the Target Project Directory is outside the Framework Root.
 - NEVER introduce new dependencies without Solution Architect approval.

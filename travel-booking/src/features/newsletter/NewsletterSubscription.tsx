@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Mail, CheckCircle, AlertCircle } from "lucide-react";
-import { Button } from "../ui/Button";
-import { Input } from "../ui/Input";
+import { Button } from "../../shared/ui/Button";
+import { Input } from "../../shared/ui/Input";
 
 export function NewsletterSubscription() {
   const [email, setEmail] = useState("");
@@ -101,3 +101,4 @@ export function NewsletterSubscription() {
     </section>
   );
 }
+

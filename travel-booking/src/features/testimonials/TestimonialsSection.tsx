@@ -1,6 +1,6 @@
 import { Quote } from "lucide-react";
-import { mockTestimonials } from "../../data/mockData";
-import { Card, CardContent } from "../ui/Card";
+import { mockTestimonials } from "./data";
+import { Card, CardContent } from "../../shared/ui/Card";
 
 export function TestimonialsSection() {
   return (
@@ -43,3 +43,4 @@ export function TestimonialsSection() {
     </section>
   );
 }
+

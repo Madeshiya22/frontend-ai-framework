@@ -37,3 +37,4 @@ export function TravelGallery() {
     </section>
   );
 }
+

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X, Plane } from "lucide-react";
-import { Button } from "../ui/Button";
+import { Button } from "../../shared/ui/Button";
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -107,3 +107,4 @@ export function Header() {
     </header>
   );
 }
+

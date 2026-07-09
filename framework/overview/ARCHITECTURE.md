@@ -75,30 +75,60 @@ This document is responsible for:
 
 ---
 
-## Project Directory Structure
+## Feature-Based Project Directory Structure
 
-The following is the canonical high-level structure. Actual folder names adapt to the selected technology stack and its conventions:
+This framework officially mandates a **Feature-Based Architecture**. Code is organized by domain or feature rather than by file type. This improves scalability, reduces coupling, and keeps related logic colocated.
 
-```
-src/
-├── components/          # Reusable UI components
-│   ├── [ComponentName]/ # One folder per component
-│   │   ├── index.[ext]  # Component logic and markup
-│   │   └── [styles]     # Component-scoped styles (if applicable)
-├── layouts/             # Page layout wrappers and shells
-├── pages/ or views/     # Route-level page components
-├── hooks/ or composables/ # Shared stateful logic (framework-dependent)
-├── utils/ or helpers/   # Pure utility functions
-├── services/            # API and external service abstractions
-├── stores/ or context/  # Global state management
-├── assets/              # Static assets (images, icons, fonts)
-│   ├── images/
-│   ├── icons/
-│   └── fonts/
-└── styles/              # Global styles and token definitions
-    ├── tokens.[ext]     # Design token definitions
-    └── global.[ext]     # Global resets and base styles
-```
+The framework supports three tiers of this architecture, selected dynamically by the Solution Architect based on project complexity:
+
+### 1. Lightweight Feature-Based
+**Used for:** Small Landing Pages, simple marketing sites, or microsites.
+**Structure:**
+- `app/` — Global application entry point and layout shells.
+- `features/` — Domain-specific feature modules (e.g., `Hero/`, `Pricing/`).
+- `shared/` — Highly reusable, generic components (e.g., `Button/`, `Card/`).
+- `assets/` — Static images, icons, and fonts.
+- `styles/` — Global CSS and design tokens.
+
+### 2. Modular Feature-Based
+**Used for:** Medium SaaS applications and complex web apps.
+**Structure:** Includes all Lightweight folders, plus:
+- `services/` — Global API abstractions and third-party integrations.
+- `hooks/` (or composables) — Reusable cross-feature state logic.
+
+### 3. Enterprise Feature-Based
+**Used for:** Large-scale enterprise applications, CRMs, and E-commerce platforms.
+**Structure:** Includes all Modular folders, plus:
+- `providers/` — Global context providers and dependency injection.
+- `routes/` — Application routing configuration.
+- `config/` — Environment variables and global configuration.
+- `store/` — Global state management.
+- `lib/` — Pre-configured third-party library wrappers (e.g., customized API clients).
+
+---
+
+## Folder Responsibilities
+
+- **`app/`**: Application entry points, root layouts, and global wrappers.
+- **`features/`**: The core of the application. Each feature directory contains its own components, local hooks, local services, and local state.
+- **`shared/`**: Generic, presentation-only components and pure utility functions used across multiple features.
+- **`assets/`**: Static media (images, fonts, raw icons).
+- **`styles/`**: Global stylesheets, resets, and design token definitions.
+- **`services/`**: Global API definitions and external service clients not tied to a single feature.
+- **`providers/`**: Context and state providers wrapping the application.
+- **`routes/`**: Route definitions mapping URLs to feature pages.
+- **`config/`**: Global configuration files and environment variable definitions.
+- **`store/`**: Global state definitions (used sparingly; favor feature-local state when possible).
+- **`lib/`**: Re-exporting or configuring third-party libraries.
+
+---
+
+## Architectural Boundary Rules
+
+1. **Features are isolated:** Features cannot directly depend on or import from other features. If two features share logic, that logic must be extracted to `shared/` or elevated to a global `service` or `store`.
+2. **Shared is generic:** The `shared/` directory must contain ONLY reusable code. It cannot contain feature-specific business logic.
+3. **Logic colocation:** Business logic, API calls, and state strictly tied to a single feature must remain inside that feature's directory, not hoisted globally.
+4. **No circular dependencies:** Modules must form a directed acyclic graph. Downward dependencies (Feature -> Shared) are allowed; upward dependencies (Shared -> Feature) are strictly forbidden.
 
 ---
 

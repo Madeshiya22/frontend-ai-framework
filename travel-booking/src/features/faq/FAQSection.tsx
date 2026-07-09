@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { mockFAQs } from "../../data/mockData";
+import { mockFAQs } from "./data";
 
 export function FAQSection() {
   const [openId, setOpenId] = useState<string | null>(null);
@@ -59,3 +59,4 @@ export function FAQSection() {
     </section>
   );
 }
+

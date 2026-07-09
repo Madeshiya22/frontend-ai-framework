@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Search, MapPin, Calendar, Users, AlertCircle } from "lucide-react";
-import { Button } from "../ui/Button";
-import { Input } from "../ui/Input";
+import { Button } from "../../shared/ui/Button";
+import { Input } from "../../shared/ui/Input";
 
 export function TripSearchForm() {
   const [formData, setFormData] = useState({
@@ -45,8 +45,8 @@ export function TripSearchForm() {
   };
 
   return (
-    <div className="relative -mt-24 z-20 container mx-auto px-4 max-w-5xl">
-      <div className="bg-white rounded-xl shadow-xl p-6 md:p-8 border border-slate-100">
+    <div className="relative -mt-32 z-20 container mx-auto px-4 max-w-5xl">
+      <div className="glass rounded-3xl p-6 md:p-10">
         <form onSubmit={handleSubmit} className="flex flex-col md:flex-row items-start md:items-end gap-4">
           <div className="w-full md:flex-1 space-y-2">
             <label htmlFor="destination" className="text-sm font-semibold text-slate-700 flex items-center gap-2">
@@ -128,3 +128,4 @@ export function TripSearchForm() {
     </div>
   );
 }
+
